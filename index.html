@@ -29,5 +29,23 @@
     });
   </script>
 </body>
+  <div id="app"></div>
+
+  <!-- AAAKeys laden -->
+  <script src="./AAAKeys.js" defer></script>
+
+  <!-- Ruft initApp auf, wenn dein Script sie definiert -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const root = document.getElementById('app');
+      if (window.initApp) {
+        window.initApp(root);
+      } else {
+        root.innerHTML = '<p>App geladen, warte auf initApp()…</p>';
+      }
+    });
+  </script>
+</body>
 </html>
+
 
