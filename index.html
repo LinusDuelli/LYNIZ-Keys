@@ -17,34 +17,11 @@
   </script>
 </head>
 <body>
-  <h1>Hallo 👋</h1>
-  <p id="status">App ist bereit ✅</p>
+  <h1>LYNIZ Keys</h1>
   <div id="app"></div>
 
-  <!-- AAAKeys laden (Cache-Buster !) -->
-  <script src="./AAAKeys.js?v=3" defer></script>
-
-  <!-- Robust warten, bis AAAKeys initApp anbietet -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const root = document.getElementById('app');
-      const status = document.getElementById('status');
-
-      let tries = 0;
-      const timer = setInterval(() => {
-        if (typeof window.initApp === 'function') {
-          clearInterval(timer);
-          status.textContent = 'Starte App…';
-          try { window.initApp(root); }
-          catch (e) { status.textContent = 'Fehler beim Start: ' + e.message; }
-        } else if (++tries > 50) { // ~5 Sekunden
-          clearInterval(timer);
-          status.textContent = 'Konnte initApp() nicht finden.';
-          root.innerHTML = '<p>AAAKeys.js lädt nicht oder definiert initApp nicht.</p>';
-        }
-      }, 100);
-    });
-  </script>
+  <!-- vorerst NUR unser Boot-Script laden -->
+  <script src="./boot.js?v=1" defer></script>
 </body>
   <div id="app"></div>
 
@@ -64,6 +41,7 @@
   </script>
 </body>
 </html>
+
 
 
 
