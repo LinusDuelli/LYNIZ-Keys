@@ -601,3 +601,18 @@ restoreLatchStyles();
     navigator.serviceWorker.register('sw.js');
   }
 </script>
+console.log('AAAKeys.js geladen');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const app = document.getElementById('app');
+  if (!app) return;
+
+  app.innerHTML = `
+    <button id="testBtn">Klick mich</button>
+    <p id="out">Noch nix passiert…</p>
+  `;
+
+  document.getElementById('testBtn').addEventListener('click', () => {
+    document.getElementById('out').textContent = 'Button funktioniert 🎹';
+  });
+});
