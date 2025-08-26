@@ -616,3 +616,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('out').textContent = 'Button funktioniert 🎹';
   });
 });
+// --- Test-UI anhängen ---
+document.addEventListener('DOMContentLoaded', () => {
+  const app = document.getElementById('app');
+  if (!app) return;
+
+  app.innerHTML = `
+    <h1>LYNIZ Keys</h1>
+    <button id="playC">C spielen</button>
+    <p id="status">Bereit.</p>
+  `;
+
+  document.getElementById('playC').addEventListener('click', () => {
+    document.getElementById('status').textContent = 'Taste C gedrückt 🎹';
+    // hier kannst du später deine echte Play-Funktion aufrufen:
+    // playNote('C4');
+  });
+});
