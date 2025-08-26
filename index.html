@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meine Musiktheorie-App</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</head>
+<body>
+  <h1>Hallo 👋</h1>
+  <p>App lädt…</p>
+
+  <!-- Dein JS einbinden -->
+  <script src="AAAKeys.js"></script>
+</body>
+</html>
