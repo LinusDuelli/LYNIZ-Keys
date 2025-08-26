@@ -3,21 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Meine Musiktheorie-App</title>
+  <title>LYNIZ Keys</title>
 
-  <link rel="manifest" href="manifest.json">
-
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#000000" />
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
+      navigator.serviceWorker.register('./sw.js').catch(console.error);
     }
   </script>
 </head>
 <body>
   <h1>Hallo 👋</h1>
-  <p>App lädt…</p>
+  <p id="status">App lädt…</p>
+  <div id="app"></div>
 
-  <!-- Dein JS einbinden -->
-  <script src="AAAKeys.js"></script>
+  <script src="./AAAKeys.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const s = document.getElementById('status');
+      if (s) s.textContent = 'App ist bereit ✅';
+    });
+  </script>
 </body>
 </html>
