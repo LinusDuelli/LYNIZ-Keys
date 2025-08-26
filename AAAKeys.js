@@ -633,3 +633,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // playNote('C4');
   });
 });
+// Wird von index.html aufgerufen und bekommt den Mount-Container (#app)
+window.initApp = function (root) {
+  // Beispiel-UI (hier später deine echte Oberfläche rendern)
+  root.innerHTML = `
+    <h1>LYNIZ Keys</h1>
+    <div style="display:flex;gap:8px;margin:12px 0;">
+      <button id="keyC">C</button>
+      <button id="keyD">D</button>
+      <button id="keyE">E</button>
+    </div>
+    <p id="status">Bereit.</p>
+  `;
+
+  // Beispiel-Logik – hier kannst du deine Sound-Funktionen aufrufen
+  const set = (t) => document.getElementById('status').textContent = t;
+  document.getElementById('keyC').addEventListener('click', () => set('C gedrückt 🎹'));
+  document.getElementById('keyD').addEventListener('click', () => set('D gedrückt 🎹'));
+  document.getElementById('keyE').addEventListener('click', () => set('E gedrückt 🎹'));
+
+  // z.B.: playNote('C4'); usw.
+};
